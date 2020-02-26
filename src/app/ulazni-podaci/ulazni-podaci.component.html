@@ -26,7 +26,7 @@
           <input [(ngModel)]="task.jezik" #jezik="ngModel" type="text" name="jezik" id="jezik" placeholder="jezik" minlength="1" 
           maxlength="30" pattern="Hrv|Eng|Nje" required>
             <div *ngIf="jezik.touched && !jezik.valid">
-              <div *ngIf="jezik.errors.required">Jezik je obavezno</div>
+              <div *ngIf="jezik.errors.required">Jezik je obavezan</div>
               <div *ngIf="jezik.errors.pattern">Tekst mora biti Eng/Hrv/Nje</div>
             </div>
         </div>
@@ -36,17 +36,12 @@
           <input [(ngModel)]="task.cijena" #cijena="ngModel" type="text" name="cijena" id="cijena" placeholder="Cijena" required>
             <div *ngIf="cijena.touched && !cijena.valid">
               <div *ngIf="cijena.errors.required">Cijena je obavezna</div>
-              <div *ngIf="cijena.errors.minlength">Obavezno je minimalno {{cijena.errors.minlength.requiredLength}} slova.</div>
             </div>
         </div>
         
         <div class="col s6">
           <label>Datum</label>
-          <input [(ngModel)]="task.datum" #datum="ngModel" type="text" name="datum" id="datum" placeholder="datum" minlength="5" maxlength="30" required>
-            <div *ngIf="datum.touched && !datum.valid">
-              <div *ngIf="datum.errors.required">Datum je obavezna</div>
-              <div *ngIf="datum.errors.minlength">Obavezno je minimalno {{datum.errors.minlength.requiredLength}} slova.</div>
-            </div>
+          <input [(ngModel)]="task.datum" #datum="ngModel" type="text" name="datum" id="datum" placeholder="datum">
         </div>
         
         <div class="col s6">
@@ -58,7 +53,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary right">Dodaj<i class="material-icons">add_circle</i></button>
+        <button type="submit" class="btn btn-primary right col s3">Dodaj<i class="material-icons">add_circle</i></button>
 
       </div>
     </form>

@@ -22,7 +22,7 @@ export class EditiraniPodaciComponent implements OnInit {
     });
   }
 
-  editCurso(event, task: TaskInterface) {
+  editTask(event, task: TaskInterface) {
     this.editStatus = true;
     this.taskZaEditiranje = task;
 
@@ -30,12 +30,12 @@ export class EditiraniPodaciComponent implements OnInit {
     console.log(this.taskZaEditiranje);
   }
 
-  onUdpdateCurso(task: TaskInterface) {
+  onUdpdateTask(task: TaskInterface) {
     this.taskServis.osvjeziTask(task);
     this.clearState();
   }
 
-  deleteCurso(event, task: TaskInterface) {
+  deleteTask(event, task: TaskInterface) {
     this.taskServis.obrisiTask(task);
     this.clearState();
   }

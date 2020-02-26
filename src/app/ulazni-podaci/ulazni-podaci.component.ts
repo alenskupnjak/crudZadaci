@@ -24,14 +24,11 @@ export class UlazniPodaciComponent implements OnInit {
   ngOnInit() {}
 
   ulazniPodaciForme(forma: NgForm) {
-    console.log(forma.valid);
-    console.log(forma);
     if (forma.valid === true) {
-       console.log(this.task);
        this.taskServis.dodajTask(this.task);
        forma.resetForm();
     } else {
-      console.log( 'Greška');
+      console.log( 'Greška kod unosa podataka');
     }
 
   }
