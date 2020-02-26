@@ -1,0 +1,66 @@
+<div class="card">
+  <div class="card-content">
+    <form (ngSubmit)="ulazniPodaciForme(novaForma)" #novaForma="ngForm" class="col s6">
+      <div class="row">
+
+        <div class="col s6">
+          <input [(ngModel)]="task.ime" #ime="ngModel" type="text" name="ime" id="ime" placeholder="Ime" minlength="2" maxlength="20" required>
+            <label>Ime</label>
+            <div *ngIf="ime.touched && !ime.valid">
+              <div *ngIf="ime.errors.required">Ime je obavezno</div>
+              <div *ngIf="ime.errors.minlength">Obavezno je minimalno {{ime.errors.minlength.requiredLength}} slova.</div>
+            </div>
+        </div>
+
+        <div class="col s6">
+          <input [(ngModel)]="task.prezime" #prezime="ngModel" type="text" name="prezime" id="prezime" placeholder="prezime" minlength="2" maxlength="30" required>
+            <label>Prezime</label>
+            <div *ngIf="prezime.touched && !prezime.valid">
+              <div *ngIf="prezime.errors.required">Prezime je obavezno</div>
+              <div *ngIf="prezime.errors.minlength">Obavezno je minimalno {{prezime.errors.minlength.requiredLength}} slova.</div>
+            </div>
+        </div>
+
+        <div class="col s6">
+          <input [(ngModel)]="task.jezik" #jezik="ngModel" type="text" name="jezik" id="jezik" placeholder="jezik" minlength="5" 
+          maxlength="30" pattern="Hrv|Eng|Nje" required>
+            <label>Jezik</label>
+            <div *ngIf="jezik.touched && !jezik.valid">
+              <div *ngIf="jezik.errors.required">Jezik je obavezno</div>
+              <div *ngIf="jezik.errors.pattern">Tekst mor biti Eng/Hrv/Nje</div>
+            </div>
+        </div>
+        
+        <div class="col s6">
+          <input [(ngModel)]="task.cijena" #cijena="ngModel" type="number" name="cijena" id="cijena" placeholder="Cijena" minlength="5" maxlength="30" required>
+            <label>Cijena</label>
+            <div *ngIf="cijena.touched && !cijena.valid">
+              <div *ngIf="cijena.errors.required">Cijena je obavezna</div>
+              <div *ngIf="cijena.errors.minlength">Obavezno je minimalno {{cijena.errors.minlength.requiredLength}} slova.</div>
+            </div>
+        </div>
+        
+        <div class="col s6">
+          <input [(ngModel)]="task.datum" #datum="ngModel" type="date" name="datum" id="datum" placeholder="datum" minlength="5" maxlength="30" required>
+            <label>Datum</label>
+            <div *ngIf="datum.touched && !datum.valid">
+              <div *ngIf="datum.errors.required">Datum je obavezna</div>
+              <div *ngIf="datum.errors.minlength">Obavezno je minimalno {{datum.errors.minlength.requiredLength}} slova.</div>
+            </div>
+        </div>
+        
+        <div class="col s6">
+          <input [(ngModel)]="task.opis" #opis="ngModel" type="text" name="opis" id="opis" placeholder="opis" minlength="5" maxlength="30" required>
+            <label>opis</label>
+            <div *ngIf="opis.touched && !opis.valid">
+              <div *ngIf="opis.errors.required">Opis je obavezna</div>
+              <div *ngIf="opis.errors.minlength">Obavezno je minimalno {{opis.errors.minlength.requiredLength}} slova.</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary right">Dodaj<i class="material-icons">add_circle</i></button>
+
+      </div>
+    </form>
+  </div>  
+</div>
