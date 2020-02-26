@@ -11,12 +11,12 @@ import { ZadatakService } from '../servisi/zadatak.service';
 export class UlazniPodaciComponent implements OnInit {
 
   task: TaskInterface = {
-    ime: '',
-    prezime: '',
-    cijena: 0,
-    jezik: '',
-    datum: '',
-    opis: ''
+    ime: 'Ema',
+    prezime: 'Skupnjaj',
+    cijena: '10',
+    jezik: 'Eng',
+    datum: '02/20/200',
+    opis: 'Opisni diio'
   };
 
   constructor(private taskServis: ZadatakService) { }
@@ -24,10 +24,12 @@ export class UlazniPodaciComponent implements OnInit {
   ngOnInit() {}
 
   ulazniPodaciForme(forma: NgForm) {
-
-    if (forma.valid) {
-
-
+    console.log(forma.valid);
+    console.log(forma);
+    if (forma.valid === true) {
+       console.log(this.task);
+       this.taskServis.dodajTask(this.task);
+       forma.resetForm();
     } else {
       console.log( 'Greška');
     }

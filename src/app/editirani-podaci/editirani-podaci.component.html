@@ -1,1 +1,80 @@
-<p>editirani-podaci works!</p>
+<div *ngIf="taskovi?.length > 0;else noCursos">
+  <ul *ngFor="let task of taskovi" class="collection">
+    <li class="collection-item">
+      <a href="#" class="secondary-content">
+        <i *ngIf="editStatus == false" (click)="editCurso($event, task)" class="material-icons">mode_edit</i>
+        <i *ngIf="editStatus && taskZaEditiranje.id == task.id" (click)="clearState()" class="material-icons">close</i>
+      </a>
+      <h5><strong>{{task.ime}}</strong></h5>
+      <br>
+      <blockquote>{{task.opis}}</blockquote>
+      <br>
+        <span class="my_tag amber"><strong>  Ime:    </strong>{{task.ime}}</span>
+        <span class="my_tag amber"><strong>  Prezime:     </strong>{{task.prezime}}</span>
+        <span class="my_tag amber"><strong>  Jezik:  </strong>{{task.jezik}}</span>
+        <hr>
+        
+        <div *ngIf="editStatus && taskZaEditiranje.id == task.id" class="container-updateCurso">
+          <!-- TODO: form -->
+          <form *ngIf="editStatus" (ngSubmit)="onUdpdateCurso(task)" class="col s12">
+            <div class="row">
+              
+              <div *ngIf="editStatus" class="form-group col s4">
+                <label>Ime</label>
+                <input [(ngModel)]="task.ime" #nombre="ngModel" type="text" name="ime" id="ime">
+              </div>
+              
+              <div class="form-group  col s4">
+                <label>Prezime</label>
+                <input [(ngModel)]="task.prezime" #idioma="ngModel" type="text" name="prezime" id="prezime" placeholder="Prezime">
+              </div>
+<!--           
+            
+            
+        
+           
+              datum: string;
+              opis: string; -->
+        
+              <div class="form-group  col s4">
+                <label>Datum</label>
+                <input [(ngModel)]="task.datum" #tecnologia="ngModel" type="text" name="datum" id="datum">
+              </div>
+
+              <div *ngIf="editStatus" class="form-group col s6">
+                  <label>Opis</label>
+                <input [(ngModel)]="task.opis" #descripcion="ngModel" type="text" name="opis" id="opis">
+              </div>
+
+              <div class="form-group col s3">
+                <label>Jezik</label>
+                <input [(ngModel)]="task.jezik" #formador="ngModel" type="text" name="jezik" id="jezik" placeholder="Jezik">
+              </div>
+
+              <div class="form-group  col s3">
+               <label>Cijena</label>
+               <input [(ngModel)]="task.cijena" #precio="ngModel" type="text" name="precio" id="precio" placeholder="Precio curso">
+              </div>
+
+
+              <div class="form-group  col s12">
+                  <button type="button" (click)="deleteCurso($event, task)" class="btn red right">Obriši
+                     <i class="material-icons right">delete_forever</i>
+                   </button>
+
+                  <button type="submit" class="btn orange">Spremi
+                    <i class="material-icons left">save</i>
+                  </button>
+              </div>
+              
+            </div>
+          </form>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noCursos>
+  <hr>
+  <h5>Nema kursa!</h5>
+</ng-template>
