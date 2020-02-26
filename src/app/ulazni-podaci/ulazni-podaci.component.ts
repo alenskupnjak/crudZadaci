@@ -11,12 +11,12 @@ import { ZadatakService } from '../servisi/zadatak.service';
 export class UlazniPodaciComponent implements OnInit {
 
   task: TaskInterface = {
-    ime: 'Ema',
-    prezime: 'Skupnjaj',
-    cijena: '10',
-    jezik: 'Eng',
-    datum: '02/20/200',
-    opis: 'Opisni diio'
+    ime: '',
+    prezime: '',
+    cijena: '',
+    jezik: '',
+    datum: '',
+    opis: ''
   };
 
   constructor(private taskServis: ZadatakService) { }

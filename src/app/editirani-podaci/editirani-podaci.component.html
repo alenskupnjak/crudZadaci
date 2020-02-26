@@ -15,7 +15,6 @@
         <hr>
         
         <div *ngIf="editStatus && taskZaEditiranje.id == task.id" class="container-updateCurso">
-          <!-- TODO: form -->
           <form *ngIf="editStatus" (ngSubmit)="onUdpdateCurso(task)" class="col s12">
             <div class="row">
               
@@ -26,15 +25,8 @@
               
               <div class="form-group  col s4">
                 <label>Prezime</label>
-                <input [(ngModel)]="task.prezime" #idioma="ngModel" type="text" name="prezime" id="prezime" placeholder="Prezime">
+                <input [(ngModel)]="task.prezime" #idioma="ngModel" type="text" name="prezime" id="prezime">
               </div>
-<!--           
-            
-            
-        
-           
-              datum: string;
-              opis: string; -->
         
               <div class="form-group  col s4">
                 <label>Datum</label>
@@ -48,12 +40,12 @@
 
               <div class="form-group col s3">
                 <label>Jezik</label>
-                <input [(ngModel)]="task.jezik" #formador="ngModel" type="text" name="jezik" id="jezik" placeholder="Jezik">
+                <input [(ngModel)]="task.jezik" #formador="ngModel" type="text" name="jezik" id="jezik">
               </div>
 
               <div class="form-group  col s3">
                <label>Cijena</label>
-               <input [(ngModel)]="task.cijena" #precio="ngModel" type="text" name="precio" id="precio" placeholder="Precio curso">
+               <input [(ngModel)]="task.cijena" #precio="ngModel" type="text" name="cijena" id="cijena">
               </div>
 
 

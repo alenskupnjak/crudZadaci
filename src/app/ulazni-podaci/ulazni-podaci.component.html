@@ -5,7 +5,7 @@
 
         <div class="col s6">
           <label>Ime</label>
-          <input [(ngModel)]="task.ime" #ime="ngModel" type="text" name="ime" id="ime" placeholder="Ime" minlength="2" maxlength="20" required>
+          <input [(ngModel)]="task.ime" #ime="ngModel" type="text" name="ime" id="ime"  minlength="2" maxlength="20" required>
             <div *ngIf="ime.touched && !ime.valid">
               <div *ngIf="ime.errors.required">Ime je obavezno</div>
               <div *ngIf="ime.errors.minlength">Obavezno je minimalno {{ime.errors.minlength.requiredLength}} slova.</div>
