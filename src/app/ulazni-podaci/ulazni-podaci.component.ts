@@ -13,7 +13,7 @@ export class UlazniPodaciComponent implements OnInit {
   task: TaskInterface = {
     ime: '',
     prezime: '',
-    cijena: '',
+    cijena: 0,
     jezik: '',
     datum: '',
     opis: ''

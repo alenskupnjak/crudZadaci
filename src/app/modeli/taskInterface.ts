@@ -2,7 +2,7 @@ export interface TaskInterface {
   id?: string;
   ime: string;
   prezime: string;
-  cijena: string;
+  cijena: number;
   jezik: string;
   datum: string;
   opis: string;

@@ -33,7 +33,7 @@
         
         <div class="col s6">
           <label>Cijena</label>
-          <input [(ngModel)]="task.cijena" #cijena="ngModel" type="text" name="cijena" id="cijena" placeholder="Cijena" required>
+          <input [(ngModel)]="task.cijena" #cijena="ngModel" type="number" name="cijena" id="cijena" placeholder="Cijena" required>
             <div *ngIf="cijena.touched && !cijena.valid">
               <div *ngIf="cijena.errors.required">Cijena je obavezna</div>
             </div>
@@ -41,7 +41,7 @@
         
         <div class="col s6">
           <label>Datum</label>
-          <input [(ngModel)]="task.datum" #datum="ngModel" type="text" name="datum" id="datum" placeholder="datum">
+          <input [(ngModel)]="task.datum" #datum="ngModel" type="date" name="datum" id="datum" placeholder="datum">
         </div>
         
         <div class="col s6">
