@@ -11,7 +11,7 @@ import { ZadatakService } from '../servisi/zadatak.service';
 export class UlazniPodaciComponent implements OnInit {
 
   task: TaskInterface = {
-    ime: '',
+    ime: 'Ime',
     prezime: '',
     cijena: 0,
     jezik: '',

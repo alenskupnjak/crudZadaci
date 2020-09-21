@@ -2,9 +2,8 @@
   "name": "crud-zadaci",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start4200": "ng serve",
-    "start4141": "ng serve --port 4141",
+    "start4141": "ng serve --port 5004 -o",
     "start3000": "ng serve --port 3000",
     "build": "ng build",
     "test": "ng test",
